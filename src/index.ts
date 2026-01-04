@@ -25,6 +25,12 @@ app.get('/', c => {
   return c.redirect('/translate');
 });
 
+// Health check endpoint
+app.get('/health', (c) => {
+  const response = { status: 'ok' };
+  return c.json(response);
+});
+
 app.get('/translate', c => {
   return c.text('Please use post method to request');
 });
